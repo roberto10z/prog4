@@ -15,33 +15,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(urlPatterns = {"/ProdutoListaServlet"})
+@WebServlet(urlPatterns = {"/produto/lista"})
 public class ProdutoListaServlet extends HttpServlet {
 
- 
-     
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ProdutoListaServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ProdutoListaServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
-
- 
-    @Override
+ @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
         IProdutoManager manager;
         manager = new ProdutoManager();
         List<Produto> produtos;
@@ -49,7 +29,7 @@ public class ProdutoListaServlet extends HttpServlet {
         
         request.setAttribute("produtos", produtos);
         RequestDispatcher rd;
-        rd = request.getRequestDispatcher("/WEB-INF/jsp/produtos-lista.jsp");
+        rd = request.getRequestDispatcher("/WEB-INF/jsp/produto-lista.jsp");
         rd.forward(request, response);
     }
 

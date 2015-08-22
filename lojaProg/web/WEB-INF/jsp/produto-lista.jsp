@@ -1,11 +1,9 @@
-<%-- 
-    Document   : produto-lista
-    Created on : 14/08/2015, 21:08:53
-    Author     : roberto.o
---%>
 
+<%@taglib prefix="c"
+          uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="java.util.List"%>
-<%@page import="br.pucpr.prog4.lojaoldschool.modells.Produto"%>
+
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,25 +12,18 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Lista de Produtos</h1>
-        <%
-
-            List<Produto> produtos;
-            produtos = (List<Produto>) request.getAttribute("produto");
-            for(Produto produto : produtos){
-         %>   
-        <div> <p> 
-                < % 
-                = produto.getNome() 
-                 % >   
-              </p>
-
-                 <a href ="produto-detalhe?id =< % = produto.getId() % > "
-                    <img src="imagens/0 <%=produto.getID() %>.jpg "
-                      
-            </div>
-        
-        
-        
+        <div>
+            <c:forEach var="produto" items="${produtos}">
+                <div>
+                    <p>${produto.nome} </p>
+                    <a href="produto-detalhe?id=$${produto.id}">
+                    <img src ="../imagens/0${produto.id}.jpg" 
+                    alt = "produto ${produto.id}">
+                    </a>
+                    <p>R$ ${produto.preco} </p> 
+                    
+                </div>
+            </c:forEach>       
+        </div>
     </body>
 </html>

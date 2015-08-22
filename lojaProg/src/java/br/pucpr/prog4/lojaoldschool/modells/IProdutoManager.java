@@ -12,5 +12,7 @@ import java.util.List;
  * @author roberto.o
  */
 public interface IProdutoManager {
+    
     List<Produto> obterTdos();
+    Produto obterPorId(int id);
 }
