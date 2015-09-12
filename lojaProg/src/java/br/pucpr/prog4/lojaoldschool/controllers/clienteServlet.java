@@ -1,6 +1,8 @@
 
 package br.pucpr.prog4.lojaoldschool.controllers;
 
+import br.pucpr.prog4.lojaoldschool.modells.ClienteManagerImpl;
+import br.pucpr.prog4.lojaoldschool.modells.clienteManager;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
@@ -53,7 +55,8 @@ public class clienteServlet extends HttpServlet {
             pessoa.setTipoPessoa(request.getParameter("tipoPessoa"));
             
     }
-
-    
+    clienteManager manager;
+    manager = new ClienteManagerImpl();
+    manager.cadastrar(pessoa);
 
 }
