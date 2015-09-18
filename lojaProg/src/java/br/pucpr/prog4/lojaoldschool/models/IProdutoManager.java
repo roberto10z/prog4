@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.pucpr.prog4.lojaoldschool.controllers;
+package br.pucpr.prog4.lojaoldschool.models;
+
+import java.util.List;
 
 /**
  *
  * @author roberto.o
  */
-class manager {
+public interface IProdutoManager {
     
+    List<Produto> obterTdos();
+    Produto obterPorId(int id);
 }

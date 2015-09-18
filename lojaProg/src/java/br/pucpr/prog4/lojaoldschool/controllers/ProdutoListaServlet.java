@@ -1,9 +1,9 @@
 package br.pucpr.prog4.lojaoldschool.controllers;
 
 
-import br.pucpr.prog4.lojaoldschool.modells.IProdutoManager;
-import br.pucpr.prog4.lojaoldschool.modells.Produto;
-import br.pucpr.prog4.lojaoldschool.modells.ProdutoManager;
+import br.pucpr.prog4.lojaoldschool.models.IProdutoManager;
+import br.pucpr.prog4.lojaoldschool.models.Produto;
+import br.pucpr.prog4.lojaoldschool.models.ProdutoManager;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
